@@ -1,6 +1,33 @@
-# README for the robot
+# Documentation guide
 
-Describe your robot here. E.g., what it does, what the requirements are, how to run it.
+the repository contains:
+
+1. Test cases/scenarios that will be executed.
+2. Manual step by step test case scenarios with screenshots
+3. An automated acceptance test using Robot Framework
+4. Test account
+
+## Manual test cases with screenshots
+
+open from this directory:
+
+```
+/manual
+```
+
+## Test account
+
+email:
+
+```
+favete3044@camplvad.com
+```
+
+password:
+
+```
+KamZs0dsd
+```
 
 ## Development guide
 
