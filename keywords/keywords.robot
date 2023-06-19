@@ -58,3 +58,11 @@ When I click on the "Deposit and Withdrawal" option
 Then I should be able to see pricing involved with transparency
     Page Should Contain Element    xpath=//h1[contains(@class, 'promo-title-h1') and contains(@class, 'promo-title-h2--centered') and normalize-space(text())='Deposit dan Trading dengan FBS']
     Sleep               1s
+
+And I click on the "Spread" option
+    Click Element       xpath=//a[@class='light-link' and text()='Spread']
+    Sleep               1s
+    
+Then the spread information is displayed
+    Page Should Contain Element    xpath=//p[@class='promo__caption' and normalize-space(text())='FBS menawarkan spread yang kecil untuk memberikan kebebasan trading']
+    Sleep               1s
