@@ -22,3 +22,8 @@ Sebagai user, saya dapat mendapatkan detail yang jelas tentang jenis-jenis akun.
     When I click on the "Trading" navbar
     And I click on the "Akun Trading" option
     Then the trading account information is displayed
+    
+Sebagai user, saya dapat melihat biaya-biaya yang terlibat dengan transparansi.
+    Given I am on the FBS landing page
+    When I click on the "Deposit and Withdrawal" option
+    Then I should be able to see pricing involved with transparency

@@ -50,3 +50,11 @@ And I click on the "Akun Trading" option
 Then the trading account information is displayed
     Page Should Contain Element     xpath=//h1[@class='inner-promo__title' and normalize-space(text())='Akun Trading']
     Sleep               1s
+
+When I click on the "Deposit and Withdrawal" option
+    Click Element       xpath=//a[contains(normalize-space(), 'Deposit dan penarikan dana')]
+    Sleep               1s
+
+Then I should be able to see pricing involved with transparency
+    Page Should Contain Element    xpath=//h1[contains(@class, 'promo-title-h1') and contains(@class, 'promo-title-h2--centered') and normalize-space(text())='Deposit dan Trading dengan FBS']
+    Sleep               1s
