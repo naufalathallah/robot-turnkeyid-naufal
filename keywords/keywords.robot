@@ -74,3 +74,11 @@ And I click on the "Margin dan Leverage" option
 Then the margin and leverage information is displayed
     Page Should Contain Element    xpath=//h1[@class='inner-promo__title' and normalize-space(text())='Margin dan Leverage']
     Sleep               1s
+
+When I click on the "Berita Perusahaan" option
+    Click Element       xpath=//a[contains(normalize-space(), 'Berita perusahaan')]
+    Sleep               1s
+
+Then the berita perusahaan information is displayed
+    Page Should Contain Element    xpath=//h1[@class='inner-promo__title' and normalize-space(text())='Berita Perusahaan FBS']
+    Sleep               1s

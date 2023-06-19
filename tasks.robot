@@ -39,3 +39,8 @@ Sebagai user, saya dapat mendapatkan informasi dengan jelas tentang leverage yan
     When I click on the "Trading" navbar
     And I click on the "Margin dan Leverage" option
     Then the margin and leverage information is displayed
+
+Sebagai user, saya dapat mendapatkan informasi lengkap tentang kondisi perdagangan lainnya.
+    Given I am on the FBS landing page
+    When I click on the "Berita Perusahaan" option
+    Then the berita perusahaan information is displayed
