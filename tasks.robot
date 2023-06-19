@@ -44,3 +44,13 @@ Sebagai user, saya dapat mendapatkan informasi lengkap tentang kondisi perdagang
     Given I am on the FBS landing page
     When I click on the "Berita Perusahaan" option
     Then the berita perusahaan information is displayed
+
+Sebagai user, saya menginginkan akses ke berbagai pasangan mata uang Forex di platform.
+    [Template]      I want access to a trading instrument
+    Forex
+    Metals
+    Indeks
+    Energi
+    Saham
+    Forex Exotic
+    Kripto

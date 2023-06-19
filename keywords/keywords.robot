@@ -82,3 +82,32 @@ When I click on the "Berita Perusahaan" option
 Then the berita perusahaan information is displayed
     Page Should Contain Element    xpath=//h1[@class='inner-promo__title' and normalize-space(text())='Berita Perusahaan FBS']
     Sleep               1s
+
+Then I should be able to see the different types of trading instruments
+    Page Should Contain Element     xpath=//a[contains(@class, 'light-link') and normalize-space()='Forex']
+    Page Should Contain Element     xpath=//a[contains(@class, 'light-link') and normalize-space()='Metals']
+    Page Should Contain Element     xpath=//a[contains(@class, 'light-link') and normalize-space()='Indeks']
+    Page Should Contain Element     xpath=//a[contains(@class, 'light-link') and normalize-space()='Energi']
+    Page Should Contain Element     xpath=//a[contains(@class, 'light-link') and normalize-space()='Saham']
+    Page Should Contain Element     xpath=//a[contains(@class, 'light-link') and normalize-space()='Forex Exotic']
+    Page Should Contain Element     xpath=//a[contains(@class, 'light-link') and normalize-space()='Kripto']
+    Sleep                           1s
+
+When I click on the "${instrument}" trading instrument
+    ${instrument_link}=    Set Variable    xpath=//a[contains(@class, 'light-link') and normalize-space()='${instrument}']
+    Click Element           ${instrument_link}
+    Sleep                   1s
+
+# consistency failed, some variables has diffrent value from the title of the page
+Then I should see the "${instrument}" types detail
+    ${instrument_detail}=   Set Variable    xpath=//h1[@class='inner-promo__title' and contains(text(), '${instrument}')]
+    Page Should Contain Element    ${instrument_detail}
+    Sleep                          1s
+
+I want access to a trading instrument
+    [Arguments]    ${instrument}
+    Given I am on the FBS landing page
+    When I click on the "Trading" navbar
+    Then I should be able to see the different types of trading instruments
+    When I click on the "${instrument}" trading instrument
+    Then I should see the "${instrument}" types detail
