@@ -66,3 +66,11 @@ And I click on the "Spread" option
 Then the spread information is displayed
     Page Should Contain Element    xpath=//p[@class='promo__caption' and normalize-space(text())='FBS menawarkan spread yang kecil untuk memberikan kebebasan trading']
     Sleep               1s
+
+And I click on the "Margin dan Leverage" option
+    Click Element       xpath=//a[@class='light-link' and text()='Margin dan Leverage']
+    Sleep               1s
+
+Then the margin and leverage information is displayed
+    Page Should Contain Element    xpath=//h1[@class='inner-promo__title' and normalize-space(text())='Margin dan Leverage']
+    Sleep               1s

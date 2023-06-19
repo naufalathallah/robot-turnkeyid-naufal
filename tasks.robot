@@ -33,3 +33,9 @@ Sebagai user, saya dapat mendapatkan informasi secara transparan tentang spread 
     When I click on the "Trading" navbar
     And I click on the "Spread" option
     Then the spread information is displayed
+
+Sebagai user, saya dapat mendapatkan informasi dengan jelas tentang leverage yang tersedia.
+    Given I am on the FBS landing page
+    When I click on the "Trading" navbar
+    And I click on the "Margin dan Leverage" option
+    Then the margin and leverage information is displayed
