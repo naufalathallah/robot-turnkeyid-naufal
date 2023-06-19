@@ -6,11 +6,14 @@ Library             RPA.Browser
 
 
 *** Keywords ***
-Example keyword
-    Log    Today is ${TODAY}
+Setup browser
+    Open Available Browser
+    Sleep               1s
+
+Teardown browser
+    Close Browser
 
 Given I am on the FBS landing page
-    Open Available Browser
     Go To               %{FBS_URL}
     Maximize Browser Window
     Sleep               1s
@@ -34,4 +37,16 @@ Then I should be able to view the application features
     Page Should Contain         Trading Forex, saham, kripto, logam, dan energi
     Page Should Contain         Deposit dan tarik dana 24/7 melalui 100+ metode pembayaran
     Page Should Contain         Nikmati dukungan dalam bahasa Indonesia, 24/7
+    Sleep               1s
+
+When I click on the "Trading" navbar
+    Click Element       xpath=//a[@class='js-menu-link menu-lower__link' and text()='Trading']
+    Sleep               1s
+
+And I click on the "Akun Trading" option
+    Click Element       xpath=//a[@class='light-link' and contains(normalize-space(), 'Akun trading')]
+    Sleep               1s
+
+Then the trading account information is displayed
+    Page Should Contain Element     xpath=//h1[@class='inner-promo__title' and normalize-space(text())='Akun Trading']
     Sleep               1s
