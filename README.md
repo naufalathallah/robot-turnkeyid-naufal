@@ -29,65 +29,30 @@ password:
 KamZs0dsd
 ```
 
-## Development guide
+## Automation result
 
-Run the robot locally:
-
-```
-rcc run
-```
-
-Provide access credentials for Control Room connectivity:
+Total test cases:
 
 ```
-rcc configure credentials <your_credentials>
+11
 ```
 
-Upload to Control Room:
+Pass
 
 ```
-rcc cloud push --workspace <workspace_id> --robot <robot_id>
+7
 ```
 
-### Suggested directory structure
-
-The directory structure given by the template:
+Fail
 
 ```
-├── devdata
-├── keywords
-│   └── keywords.robot
-├── libraries
-│   └── MyLibrary.py
-├── resources
-│   └── variables.py
-├── conda.yaml
-├── robot.yaml
-└── tasks.robot
+4
 ```
 
-where
+The test cases failed due to inconsistent text usage and got stuck during the MT 5 loading process. The issues might be:
 
-- `devdata`: A place for all data/material related to development, e.g., test data. Do not put any sensitive data here!
-- `keywords`: Robot Framework keyword files.
-- `libraries`: Python library code.
-- `resources`: Define your resources in a centralized place. For example the robot variables can be defined in here. Do not put any sensitive data here!
-- `conda.yaml`: Environment configuration file.
-- `robot.yaml`: Robot configuration file.
-- `tasks.robot`: Robot Framework task suite - high-level process definition.
+```
+1. Inconsistent text usage: This problem might be caused by the test case's failure to accurately reference text.
 
-In addition to these, you can create your own directories (e.g. `bin`, `tmp`). Add these directories to the `PATH` or `PYTHONPATH` section of `robot.yaml` if necessary.
-
-Logs and artifacts are stored in `output` by default - see `robot.yaml` for configuring this.
-
-Learn how to [handle variables and secrets](https://robocorp.com/docs/development-guide/variables-and-secrets/secret-management).
-
-### Configuration
-
-Give the task name and startup commands in `robot.yaml` with some additional configuration. See [Docs](https://robocorp.com/docs/setup/robot-structure#robot-configuration-file-robot-yaml) for more.
-
-Put all the robot dependencies in `conda.yaml`. These are used for managing the execution environment.
-
-### Additional documentation
-
-See [Robocorp Docs](https://robocorp.com/docs/) for more documentation.
+2. Stuck during MT 5 loading: This might be caused by network issues, server response times, or the platform itself.
+```
