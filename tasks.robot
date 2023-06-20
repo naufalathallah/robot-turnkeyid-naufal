@@ -54,3 +54,59 @@ Sebagai user, saya menginginkan akses ke berbagai pasangan mata uang Forex di pl
     Saham
     Forex Exotic
     Kripto
+
+Sebagai user, saya dapat mengakses ke data pasar real-time di platform.
+    Given I am on the FBS landing page
+    When I click on the "Masuk" button
+    And I fill in the login data     %{EMAIL}    %{PASS}
+    And I click on the "Login" button
+    Then I am taken to the dashboard
+    When I click on the "Trading" button in progress
+    And I click on "MT5 Web Terminal"
+    # stuck at loading from here
+    And I click on the "Accept" button
+    And I click on the "Demo" button
+    And I fill in the first name, last name, and email       %{EMAIL}       %{FN}      %{LN}
+    And I click on the "Agree" checkbox
+    And I click on the "Next" button
+    And I click on the "Complete" button
+    Then I can access the dashboard features
+    And I can see real-time charts
+
+Sebagai user, saya dapat risk management tools di platform.
+    Given I am on the FBS landing page
+    When I click on the "Masuk" button
+    And I fill in the login data     %{EMAIL}    %{PASS}
+    And I click on the "Login" button
+    Then I am taken to the dashboard
+    When I click on the "Trading" button in progress
+    And I click on "MT5 Web Terminal"
+    # stuck at loading from here
+    When I click on the "Accept" button
+    And I click on the "Demo" button
+    And I fill in the first name, last name, and email       %{EMAIL}       %{FN}      %{LN}
+    And I click on the "Agree" checkbox
+    And I click on the "Next" button
+    And I click on the "Complete" button
+    Then I can access the dashboard features
+    And I can see real-time charts
+    When I click on "New Order"
+    Then I can use the risk management tools
+
+Sebagai user, saya dapat melakukan verifikasi dokumen.
+    Given I am on the FBS landing page
+    When I click on the "Masuk" button
+    And I fill in the login data     %{EMAIL}    %{PASS}
+    And I click on the "Login" button
+    Then I am taken to the dashboard
+    When I click on the "Verifikasi ID" option
+    Then I am taken to the "Bukti Identitas" page
+
+Sebagai user, saya menginginkan akses ke materi edukasi di platform.
+    [Template]      I want access to a education material
+    Buku panduan trading Forex
+    Tips untuk trader
+    Webinar
+    Video pelajaran
+    Seminar
+    Glossary
